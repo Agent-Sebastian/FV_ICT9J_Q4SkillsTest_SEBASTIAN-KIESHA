@@ -7,6 +7,11 @@
 </head>
     
     <style>
+
+        body{
+        background-image: url(https://img.freepik.com/free-vector/3d-triangle-background-with-vivid-colors_23-2148396607.jpg?semt=ais_hybrid&w=740&q=80);
+        background-size: cover;
+        }
         .form-box {
         background: rgba(194, 208, 246, 0.6);
         backdrop-filter: blur(8px); 
@@ -73,7 +78,7 @@
 
 
             <div style="text-align: center; margin-top: 15px;">
-                <button type="button" onclick="login()">Log in</button>
+                <button type="button" onclick="login()" >Log in</button>
                 <br><br>
                 <button type="reset" class="button-style">Cancel</button>
             </div>
@@ -122,7 +127,8 @@
 
             switch(Correct) {
                 case true:   // if put the right information
-                    alert("Welcome!")
+                    alert("Welcome!");
+                    window.location.href = "page2.html";
                     
                 break;
 
