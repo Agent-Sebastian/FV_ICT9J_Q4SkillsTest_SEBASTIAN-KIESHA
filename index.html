@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Test</title>
+</head>
+    
+    <style>
+
+        body{
+        background-image: url(https://static.vecteezy.com/system/resources/thumbnails/036/055/566/small/ai-generated-black-roses-on-a-black-background-photo.jpg);
+        background-size: cover;
+        }
+        .form-box {
+        background: rgba(15, 16, 20, 0.6);
+        backdrop-filter: blur(8px); 
+        width: 500px;
+        margin: 50px auto;
+        padding: 30px;
+        border-radius: 20px;
+                            }
+
+
+            .form-box input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        
+                            }             
+
+
+            .profile-pic {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 20px auto;
+        border: 3px solid #2b2b2b;
+        }
+
+    </style>
+
+<body>
+
+     <form>
+
+        <div class="form-box">
+
+            <h1 style="text-align: center; color: rgb(255, 255, 255); background-color: rgb(42, 42, 42);">Log in</h1>
+
+
+            <br><br>
+            
+            
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile" class="profile-pic">
+
+
+
+            <br><br><br>
+
+           
+
+           <h4 style="color: white;"> Username:</h1> <br>
+            <input type="text" name="user" id="username" placeholder="Enter username here...">
+
+            <br><br>
+
+             <h4 style="color: white;">Password:</h4><br>
+            <input type="password" name="password" id="password" placeholder="Enter password here...">
+
+            <br><br>
+
+            <br>
+
+            <input type="checkbox" id="checkbox" style="width: auto; padding: 0; color: white;" > Stay logged in
+            <br><br>
+
+
+            <div style="text-align: center; margin-top: 15px;">
+                <button id="loginBtn" type="button" onclick="login()">Log in</button>
+                <br><br>
+                <button type="reset" class="button-style">Cancel</button>
+            </div>
+
+            <br>
+
+
+            <h5><a href="">Forgot username / password?</a></h5>
+
+
+
+            
+            <br>
+            <details>
+                <summary>Instructions:</summary>
+                    <p>Input all the required data, then press the "Log in" button.</p>
+            </details>
+
+
+            </div>
+        </form> 
+        
+       <script>
+        let attempts = 0;
+
+            function login() {
+
+                let user = document.getElementById("username").value;
+                let pass = document.getElementById("password").value;
+
+                let CU = "Student627";
+                let CP = "CPRICE";
+
+                let Correct = (user == CU && pass == CP);
+
+                let checkbox = document.getElementById("checkbox").checked;
+
+                if (user === "" || pass === "") {
+                    alert("Please enter username and password.");
+                    return;
+                }
+
+                if (checkbox) {
+                    alert("Stay logged in enabled");
+                } else {
+                    alert("Stay logged in disabled");
+                }
+
+                switch (Correct) {
+
+                    case true:
+
+                        alert("Welcome!");
+                        attempts = 0;
+                        window.location.href = "notebooks.html";
+
+                    break;
+
+
+                    case false:
+
+                        attempts++;
+
+                        alert("Incorrect username/password. Attempt: " + attempts + " of 3");
+
+                    break;
+                }
+
+                if (attempts >= 3) {
+                    alert("Too many failed attempts.");
+
+                    document.getElementById("loginBtn").disabled = true;
+                }
+
+
+    }
+
+</script>
+
+           
+            
+       
+</body>
+</html>
